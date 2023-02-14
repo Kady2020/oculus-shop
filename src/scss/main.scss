@@ -152,7 +152,22 @@ body {
 }
 
 .title-h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.title-h3 {
+  font-size: 24px;
+  color: #070707;
+}
+
+.gradient-text {
   font-size: 36px;
+  text-transform: uppercase;
+
+  @media (max-width: 767.98px) {
+    font-size: 32px;
+  }
 }
 
 .sub-text-s {
@@ -213,7 +228,7 @@ body {
 }
 /*==================== REPEAT BLOCK ====================*/
 
-//todo: HEADER
+//todo ==================== HEADER ====================
 .header {
   position: fixed;
   width: 100%;
@@ -253,8 +268,7 @@ body {
   }
 
   &__container {
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     align-items: center;
     min-height: 90px;
     gap: 30px;
@@ -264,37 +278,23 @@ body {
     }
   }
 
-  &__menu {
-    @media (max-width: 767.98px) {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: -100%;
-      left: 0;
+  &__logo {
+    flex: 1 1 auto;
 
-      background: #e4e4e4;
-      padding: 150px 15px 30px 15px;
-      box-shadow: inset 0 0 3px 0.5px;
-      visibility: hidden;
-      overflow: auto;
-      transition: all 0.2s linear;
-
-      &.active {
-        top: 0;
-        visibility: visible;
-      }
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: center;
     }
   }
 
   &__actions {
-    justify-self: end;
     display: flex;
     align-items: center;
     gap: 20px;
   }
 }
 
-.menu {
+.menu-header {
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -313,6 +313,26 @@ body {
   &__item {
     @media (max-width: 767.98px) {
       font-size: 24px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+
+    background: #e4e4e4;
+    padding: 150px 15px 30px 15px;
+    box-shadow: inset 0 0 3px 0.5px;
+    visibility: hidden;
+    overflow: auto;
+    transition: all 0.2s linear;
+
+    &.active {
+      top: 0;
+      visibility: visible;
     }
   }
 }
@@ -404,7 +424,7 @@ body {
   }
 }
 
-//todo: INTRO
+//todo ==================== INTRO ====================
 .intro {
   position: relative;
   min-height: 100vh;
@@ -485,6 +505,81 @@ body {
   }
 }
 
-//todo:
+//todo ==================== FEATURES ====================
+
+//todo ==================== ??? ====================
 @import '../../node_modules/swiper/swiper';
 @import '../../node_modules/swiper/swiper-bundle';
+
+//todo ==================== FOOTER ====================
+.footer {
+  padding: 30px 0;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+
+    @media (max-width: 658px) {
+      flex-direction: column;
+    }
+  }
+
+  &__menu {
+    @media (max-width: 658px) {
+      order: 2;
+    }
+  }
+
+  &__logo {
+    flex: 1 1 auto;
+
+    @media (min-width: 991.98px) {
+      display: flex;
+      justify-content: center;
+    }
+
+    @media (max-width: 658px) {
+      order: 1;
+    }
+  }
+
+  &__socials {
+    @media (max-width: 658px) {
+      order: 3;
+    }
+  }
+}
+
+.menu-footer {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width: 658px) {
+      justify-content: center;
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
