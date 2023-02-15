@@ -6,3 +6,4 @@ import "./libraries/jquery-3.6.0.min.js";
 import "./modules/header-burger.js";
 import "./modules/header-scroll.js";
 import "./modules/swiper.js";
+import "./modules/tabs.js";
